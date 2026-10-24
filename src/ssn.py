@@ -50,7 +50,7 @@ def mask_ssn(ssn: str | None) -> str:
     if not ssn:
         return ""
     digits = re.sub(r"\D", "", ssn)
-    return f"***-**-{digits[-4:]}" if len(digits) >= 4 else "***-**-****"
+    return f"XXX-XX-{digits[-4:]}" if len(digits) >= 4 else "XXX-XX-XXXX"
 
 
 def redact_ssns(text: str) -> tuple[str, int]:

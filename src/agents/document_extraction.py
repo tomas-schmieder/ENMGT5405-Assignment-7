@@ -96,7 +96,13 @@ def transcribe(doc: dict, rt: Runtime, metrics: list) -> DocumentExtraction:
 
 def build_record(doc: dict, ex: DocumentExtraction, by: str, call_id: str | None, at: str) -> dict:
     """Turn a transcription into the typed, validated extraction record."""
-    doc_type = doc["doc_type"]
+    declared = doc["doc_type"]
+    doc_type = declared
+    notes: list[str] = []
+    if ex.form_type_seen in FORM_BOXES and ex.form_type_seen != declared and doc.get("source") != "manual":
+        # The taxpayer picked the wrong form type; the form itself says what it is.
+        doc_type = ex.form_type_seen
+        notes.append(f"Uploaded as {declared}; the form is a {doc_type}.")
     spec = FORM_BOXES.get(doc_type, {})
     by_box = {_normalise_box(f.box): f for f in ex.fields}
     fields: dict[str, dict] = {}
@@ -132,7 +138,7 @@ def build_record(doc: dict, ex: DocumentExtraction, by: str, call_id: str | None
             if check.ok:
                 ssn_info.update(valid_fictional=True, last4=digits[-4:], masked=mask_ssn(digits))
             else:  # keep nothing at all from a real-looking SSN
-                ssn_info.update(valid_fictional=False, last4=None, masked="***-**-****")
+                ssn_info.update(valid_fictional=False, last4=None, masked="XXX-XX-XXXX")
             if not check.ok:
                 issues.append({"code": "non_test_ssn", "message": "The form shows a Social Security number that is "
                                "not a 900-series test number."})
@@ -141,6 +147,9 @@ def build_record(doc: dict, ex: DocumentExtraction, by: str, call_id: str | None
     seen = ex.form_type_seen
     if seen not in {doc_type, "other"}:
         issues.append({"code": "wrong_form", "message": f"This looks like a {seen}, not a {doc_type}."})
+    # most meaningful problem first (what the taxpayer is told about)
+    order = ["non_test_ssn", "wrong_form", "wrong_year", "w2_image_required"]
+    issues.sort(key=lambda i: order.index(i["code"]) if i["code"] in order else len(order))
     year = (ex.tax_year or "").strip()
     if doc.get("source") != "manual" and year != "2025":
         issues.append({"code": "wrong_year", "message": f"The tax year on this form reads {year or 'unclear'}, not 2025."})
@@ -153,7 +162,8 @@ def build_record(doc: dict, ex: DocumentExtraction, by: str, call_id: str | None
         "doc_id": doc["doc_id"], "doc_type": doc_type, "revision": int(doc.get("revision", 0)),
         "by": by, "call_id": call_id, "at": at, "form_type_seen": seen, "tax_year": year or None,
         "payer": ex.payer_name, "recipient_name": ex.recipient_name, "recipient_ssn": ssn_info,
-        "fields": fields, "flags": flags, "distribution_code": code, "notes": ex.notes[:300], "issues": issues,
+        "fields": fields, "flags": flags, "distribution_code": code, "issues": issues,
+        "declared_type": declared, "notes": " ".join(notes + [ex.notes])[:300],
     }
 
 
@@ -187,7 +197,7 @@ def extract_document_node(payload: dict, rt: Runtime) -> dict:
             pass
     return {
         "extractions": {doc["doc_id"]: record},
-        "documents": {doc["doc_id"]: {"status": status}},
+        "documents": {doc["doc_id"]: {"status": status, "doc_type": record.get("doc_type", doc["doc_type"])}},
         "metrics": metrics,
         "trace": [{"at": now, "agent": AGENT, "outcome": "success" if status == "extracted" else "need_more_input",
                    "summary": f"Read {doc['doc_type']} {doc['doc_id']} ({status})."}],

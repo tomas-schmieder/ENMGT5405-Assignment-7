@@ -220,9 +220,11 @@ def _validator_for(step: dict):
             t = (text or "").strip().lower()
             if any(w in t for w in ("change", "fix", "edit", "wrong")) or t in {"no", "not yet", "n"}:
                 return "change"
-            if any(w in t for w in ("submit", "send", "yes", "review", "ok", "okay", "go ahead")):
+            # A bare "yes" is not enough: it could be a late reply to the previous question.
+            if any(w in t for w in ("submit", "send", "review", "go ahead")):
                 return "submit"
-            raise Invalid("Please say 'send it for review' or 'I want to change something'.")
+            raise Invalid("To send your draft, choose 'Send it to Kushim for review' (or type 'send it'). "
+                          "To change something, choose 'I want to change something'.")
         return _submit
     if step.get("kind") == "choice" and step.get("options"):
         values = {o["value"] for o in step["options"]}
@@ -342,7 +344,7 @@ def next_step(state: dict) -> dict | None:
         lines = confirmed_fact_lines({"facts": state.get("facts")}, FACT_LABELS)
         docs = [f"- {d.get('doc_type')}: {d.get('file_name')}" for d in (state.get("documents") or {}).values()
                 if d.get("status") not in {"rejected", "duplicate"}]
-        body = "\n".join(lines + (["Forms received:"] + docs if docs else []))
+        body = "\n".join(lines) + ("\n\nForms received:\n" + "\n".join(docs) if docs else "")
         return {"question_id": CONFIRM_QUESTION_ID, "fact": "summary_confirmed", "kind": "yes_no",
                 "options": [], "section": "Check your answers", "sensitive": False,
                 "text": "Here is a summary of what you've told me:\n" + body + "\n\nIs everything correct?",
