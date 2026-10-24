@@ -1,0 +1,17 @@
+# local environments and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.streamlit/secrets.toml
+
+# runtime data (case database, checkpoints, uploads, generated drafts)
+var/
+traces/*.jsonl.tmp
+
+# secrets
+.env
+
+# OS noise
+.DS_Store

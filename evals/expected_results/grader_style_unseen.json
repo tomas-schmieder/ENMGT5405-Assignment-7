@@ -1,0 +1,12 @@
+{
+  "case": "grader_style_unseen",
+  "worked_by": "Hand-worked; not produced by SilverFile code.",
+  "filing_status": "single",
+  "outcome": "draft",
+  "lines": {"1z": "61321", "9": "61321", "11b": "61321", "12e": "17750", "13b": "6000", "14": "23750", "15": "37571",
+            "16": "4271", "24": "4271", "25a": "6875", "33": "6875", "34": "2604", "37": "0"},
+  "boxes_12d": 1,
+  "notes": ["Box 1 $61,320.75 rounds to 61,321; box 2 $6,875.40 rounds to 6,875.",
+            "Born 1960-12-31: before 1961-01-02, so eligible and the age box is checked (boundary case).",
+            "15 = 61,321 - 23,750 = 37,571; Tax Table Single row 37,550-37,600 = 4,271; refund 2,604."]
+}

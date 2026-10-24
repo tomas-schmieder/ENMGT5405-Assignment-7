@@ -1,0 +1,10 @@
+{
+  "case": "case_qss",
+  "worked_by": "Hand-worked; not produced by SilverFile code.",
+  "filing_status": "qss",
+  "outcome": "draft",
+  "lines": {"5a": "52000", "5b": "52000", "9": "52000", "11b": "52000", "12e": "33100", "13b": "6000", "14": "39100",
+            "15": "12900", "16": "1293", "24": "1293", "25b": "5200", "33": "5200", "34": "3907", "37": "0"},
+  "boxes_12d": 1,
+  "notes": ["QSS chart 1 box = 33,100; senior deduction 6,000; 15 = 12,900; Tax Table (QSS uses the MFJ column) row 12,900-12,950 = 1,293; refund 3,907."]
+}

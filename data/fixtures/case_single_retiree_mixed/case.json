@@ -1,0 +1,55 @@
+{
+  "answers": {
+    "answerer": "I'm answering for myself",
+    "return_type_ok": "yes",
+    "spouse_died_2025": "no",
+    "tp_blind": "no",
+    "tp_claimable": "no",
+    "us_resident": "yes",
+    "dependents_any": "no",
+    "has_w2": "0",
+    "has_1099int": "1",
+    "has_1099div": "1",
+    "has_1099r": "2",
+    "has_ssa1099": "1",
+    "other_income": "no",
+    "itemize": "no",
+    "est_any": "yes",
+    "sched_any": "no",
+    "refund_method": "check",
+    "upload_docs": "done",
+    "confirm_summary": "yes",
+    "dep_more": "no",
+    "tp_first_name": "Dorothy",
+    "tp_last_name": "Kim",
+    "tp_dob": "June 30, 1953",
+    "filing_status": "single",
+    "tp_ssn": "900-21-7788",
+    "qcd_any": "yes",
+    "qcd_amount": "2,000",
+    "est_amount": "1,000"
+  },
+  "purpose": "Coverage: SS + 1099-INT (incl. tax-exempt) + 1099-DIV qualified + IRA with QCD + pension + estimates.",
+  "documents": [
+    {
+      "type": "1099-INT",
+      "file": "data/fixtures/case_single_retiree_mixed/int_first_ithaca.png"
+    },
+    {
+      "type": "1099-DIV",
+      "file": "data/fixtures/case_single_retiree_mixed/div_cayuga_fund.png"
+    },
+    {
+      "type": "1099-R",
+      "file": "data/fixtures/case_single_retiree_mixed/r_ira_lakeside.png"
+    },
+    {
+      "type": "1099-R",
+      "file": "data/fixtures/case_single_retiree_mixed/r_pension_teachers.png"
+    },
+    {
+      "type": "SSA-1099",
+      "file": "data/fixtures/case_single_retiree_mixed/ssa_kim.png"
+    }
+  ]
+}

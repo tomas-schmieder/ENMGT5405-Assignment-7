@@ -1,0 +1,78 @@
+{
+  "eval_case_1": {
+    "purpose": "Clean minimal run: single filer, one W-2 image, nonzero tax, refund.",
+    "documents": 1
+  },
+  "eval_case_2": {
+    "purpose": "HITL run: taxpayer's stated wages conflict with the W-2; resolved by a reviewer.",
+    "documents": 2
+  },
+  "case_single_retiree_mixed": {
+    "purpose": "Coverage: SS + 1099-INT (incl. tax-exempt) + 1099-DIV qualified + IRA with QCD + pension + estimates.",
+    "documents": 5
+  },
+  "case_mfj_high_income": {
+    "purpose": "Coverage: MFJ, two W-2s (parallel extraction), 3 boxes, senior deduction phaseout, Tax Computation Worksheet.",
+    "documents": 3
+  },
+  "case_hoh_dependent": {
+    "purpose": "Coverage: head of household with a dependent grandchild.",
+    "documents": 1
+  },
+  "case_mfs_lived_apart": {
+    "purpose": "Coverage: married filing separately, lived apart (SS worksheet), no senior deduction for MFS.",
+    "documents": 2
+  },
+  "case_qss": {
+    "purpose": "Coverage: qualifying surviving spouse (spouse died 2024) with dependent son.",
+    "documents": 1
+  },
+  "grader_style_unseen": {
+    "purpose": "Grader-style unseen input: a different W-2 (cents, age-65 boundary DOB) through the same path.",
+    "documents": 1
+  },
+  "stop_1099r_2b": {
+    "purpose": "Stop: 1099-R with box 2b 'taxable amount not determined' checked.",
+    "documents": 1
+  },
+  "stop_advice": {
+    "purpose": "Stop: taxpayer asks for tax advice.",
+    "documents": 0
+  },
+  "stop_spouse_died": {
+    "purpose": "Stop: spouse died during 2025 (filing-status ambiguity).",
+    "documents": 0
+  },
+  "stop_exploitation": {
+    "purpose": "Stop: refund routed to someone else's account.",
+    "documents": 0
+  },
+  "stop_crypto": {
+    "purpose": "Stop: out-of-scope other income (digital assets).",
+    "documents": 0
+  },
+  "stop_itemize": {
+    "purpose": "Stop: wants to itemize deductions.",
+    "documents": 0
+  },
+  "stop_too_young": {
+    "purpose": "Stop: not eligible for Form 1040-SR (born after January 1, 1961).",
+    "documents": 0
+  },
+  "stop_third_party": {
+    "purpose": "Stop: third party answering without stated authority.",
+    "documents": 0
+  },
+  "stop_capital_gain_dist": {
+    "purpose": "Stop: 1099-DIV with capital gain distributions (needs line 7a).",
+    "documents": 1
+  },
+  "stop_real_ssn_w2": {
+    "purpose": "Security: a W-2 showing a non-test SSN is rejected and never stored.",
+    "documents": 1
+  },
+  "bench_ten_docs": {
+    "purpose": "Context-window benchmark (assignment \u00a74.5): ten 2025 documents processed sequentially in one thread.",
+    "documents": 10
+  }
+}

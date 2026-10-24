@@ -1,0 +1,51 @@
+{
+  "answers": {
+    "answerer": "I'm answering for myself",
+    "return_type_ok": "yes",
+    "spouse_died_2025": "no",
+    "tp_blind": "no",
+    "tp_claimable": "no",
+    "us_resident": "yes",
+    "dependents_any": "no",
+    "has_w2": "2",
+    "has_1099int": "1",
+    "has_1099div": "0",
+    "has_1099r": "0",
+    "has_ssa1099": "0",
+    "other_income": "no",
+    "itemize": "no",
+    "est_any": "no",
+    "sched_any": "no",
+    "refund_method": "check",
+    "upload_docs": "done",
+    "confirm_summary": "yes",
+    "dep_more": "no",
+    "tp_first_name": "Robert",
+    "tp_last_name": "Ostrowski",
+    "tp_dob": "February 10, 1955",
+    "filing_status": "mfj",
+    "tp_ssn": "900-33-1001",
+    "sp_first_name": "Linda",
+    "sp_last_name": "Ostrowski",
+    "sp_dob": "September 5, 1958",
+    "sp_ssn": "900-33-1002",
+    "sp_blind": "yes",
+    "sp_claimable": "no",
+    "stated_wages": "about 192,000"
+  },
+  "purpose": "Coverage: MFJ, two W-2s (parallel extraction), 3 boxes, senior deduction phaseout, Tax Computation Worksheet.",
+  "documents": [
+    {
+      "type": "W-2",
+      "file": "data/fixtures/case_mfj_high_income/w2_robert.png"
+    },
+    {
+      "type": "W-2",
+      "file": "data/fixtures/case_mfj_high_income/w2_linda.png"
+    },
+    {
+      "type": "1099-INT",
+      "file": "data/fixtures/case_mfj_high_income/int_ostrowski.png"
+    }
+  ]
+}

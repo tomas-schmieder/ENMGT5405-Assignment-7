@@ -1,0 +1,47 @@
+{
+  "answers": {
+    "answerer": "I'm answering for myself",
+    "return_type_ok": "yes",
+    "spouse_died_2025": "no",
+    "tp_blind": "no",
+    "tp_claimable": "no",
+    "us_resident": "yes",
+    "dependents_any": "no",
+    "has_w2": "0",
+    "has_1099int": "0",
+    "has_1099div": "0",
+    "has_1099r": "1",
+    "has_ssa1099": "1",
+    "other_income": "no",
+    "itemize": "no",
+    "est_any": "no",
+    "sched_any": "no",
+    "refund_method": "check",
+    "upload_docs": "done",
+    "confirm_summary": "yes",
+    "dep_more": "no",
+    "tp_first_name": "Walter",
+    "tp_last_name": "Price",
+    "tp_dob": "January 15, 1956",
+    "filing_status": "married filing separately",
+    "tp_ssn": "900-62-3300",
+    "sp_first_name": "Joan",
+    "sp_last_name": "Price",
+    "sp_ssn": "900-62-3301",
+    "mfs_itemizes": "no",
+    "mfs_apart": "yes",
+    "mfs_spouse_no_income": "no",
+    "qcd_any": "no"
+  },
+  "purpose": "Coverage: married filing separately, lived apart (SS worksheet), no senior deduction for MFS.",
+  "documents": [
+    {
+      "type": "1099-R",
+      "file": "data/fixtures/case_mfs_lived_apart/r_price_pension.png"
+    },
+    {
+      "type": "SSA-1099",
+      "file": "data/fixtures/case_mfs_lived_apart/ssa_price.png"
+    }
+  ]
+}

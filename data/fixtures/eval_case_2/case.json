@@ -1,0 +1,61 @@
+{
+  "answers": {
+    "answerer": "I'm answering for myself",
+    "return_type_ok": "yes",
+    "spouse_died_2025": "no",
+    "tp_blind": "no",
+    "tp_claimable": "no",
+    "us_resident": "yes",
+    "dependents_any": "no",
+    "has_w2": "1",
+    "has_1099int": "0",
+    "has_1099div": "0",
+    "has_1099r": "0",
+    "has_ssa1099": "1",
+    "other_income": "no",
+    "itemize": "no",
+    "est_any": "yes",
+    "sched_any": "no",
+    "refund_method": "direct deposit",
+    "upload_docs": "done",
+    "confirm_summary": "yes",
+    "dep_more": "no",
+    "tp_first_name": "Harold",
+    "tp_last_name": "Benson",
+    "tp_dob": "November 2, 1958",
+    "filing_status": "Married filing jointly",
+    "tp_ssn": "900-71-4402",
+    "sp_first_name": "Margaret",
+    "sp_last_name": "Benson",
+    "sp_dob": "April 20, 1962",
+    "sp_ssn": "900-71-4403",
+    "sp_blind": "no",
+    "sp_claimable": "no",
+    "stated_wages": "about 54,000",
+    "est_amount": "400",
+    "refund_account_own": "yes"
+  },
+  "purpose": "HITL run: taxpayer's stated wages conflict with the W-2; resolved by a reviewer.",
+  "followup_answers": {
+    "conflict-wages": "My number is right"
+  },
+  "reviewer_actions": [
+    {
+      "reason": "user_document_conflict",
+      "action": "confirm_document_value",
+      "reviewer": "Kushim reviewer (demo)",
+      "rationale": "Spoke with the taxpayer; the W-2 amount is correct.",
+      "evidence": "Phone call with Harold Benson: he confirmed W-2 box 1 shows $45,200.00. His estimate of $54,000 included his Social Security."
+    }
+  ],
+  "documents": [
+    {
+      "type": "W-2",
+      "file": "data/fixtures/eval_case_2/w2_fingerlakes_hardware.png"
+    },
+    {
+      "type": "SSA-1099",
+      "file": "data/fixtures/eval_case_2/ssa1099_benson.png"
+    }
+  ]
+}

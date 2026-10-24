@@ -1,0 +1,21 @@
+{
+  "case": "eval_case_2",
+  "worked_by": "Hand-worked; not produced by SilverFile code.",
+  "filing_status": "mfj",
+  "outcome": "draft_after_review",
+  "expected_escalation": "user_document_conflict",
+  "lines": {"1z": "45200", "2a": "0", "2b": "0", "3a": "0", "3b": "0", "4a": "0", "4b": "0", "5a": "0", "5b": "0",
+            "6a": "21600", "6b": "16200", "9": "61400", "10": "0", "11a": "61400", "11b": "61400", "12e": "33100",
+            "13b": "6000", "14": "39100", "15": "22300", "16": "2233", "24": "2233", "25a": "3100", "25b": "0",
+            "25c": "0", "25d": "3100", "26": "400", "33": "3500", "34": "1267", "37": "0"},
+  "boxes_12d": 1,
+  "notes": [
+    "Conflict: stated about $54,000 vs W-2 $45,200 -> difference $8,800 > max($1,000, $4,520) -> follow-up; taxpayer insists -> escalate; reviewer confirms W-2.",
+    "SS worksheet (MFJ): L1 21,600; L2 10,800; L3 45,200; L4 0; L5 56,000; L6 0; L7 56,000; L8 32,000; L9 24,000; L10 12,000; L11 12,000; L12 12,000; L13 6,000; L14 min(10,800, 6,000) = 6,000; L15 0.85 x 12,000 = 10,200; L16 16,200; L17 18,360; L18 16,200.",
+    "Line 9 = 45,200 + 16,200 = 61,400.",
+    "Boxes: Harold born 1958 (1 box); Margaret born 1962 (no box). MFJ $31,500 + $1,600 = $33,100.",
+    "Senior deduction: only Harold qualifies; MAGI 61,400 <= 150,000 -> $6,000.",
+    "Line 15 = 61,400 - 39,100 = 22,300; Tax Table MFJ row 22,300-22,350 = $2,233.",
+    "Payments 3,100 + 400 = 3,500; overpayment 1,267."
+  ]
+}

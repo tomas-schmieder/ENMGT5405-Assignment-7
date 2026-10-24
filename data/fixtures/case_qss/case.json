@@ -1,0 +1,44 @@
+{
+  "answers": {
+    "answerer": "I'm answering for myself",
+    "return_type_ok": "yes",
+    "spouse_died_2025": "no",
+    "tp_blind": "no",
+    "tp_claimable": "no",
+    "us_resident": "yes",
+    "dependents_any": "yes",
+    "has_w2": "0",
+    "has_1099int": "0",
+    "has_1099div": "0",
+    "has_1099r": "1",
+    "has_ssa1099": "0",
+    "other_income": "no",
+    "itemize": "no",
+    "est_any": "no",
+    "sched_any": "no",
+    "refund_method": "check",
+    "upload_docs": "done",
+    "confirm_summary": "yes",
+    "dep_more": "no",
+    "tp_first_name": "Beatrice",
+    "tp_last_name": "Hall",
+    "tp_dob": "December 1, 1958",
+    "filing_status": "qualifying surviving spouse",
+    "qss_death_year": "2024",
+    "qss_child": "yes",
+    "tp_ssn": "900-81-5151",
+    "dep_first": "Owen",
+    "dep_last": "Hall",
+    "dep_ssn": "900-81-5152",
+    "dep_relationship": "son",
+    "line19": "0",
+    "qcd_any": "no"
+  },
+  "purpose": "Coverage: qualifying surviving spouse (spouse died 2024) with dependent son.",
+  "documents": [
+    {
+      "type": "1099-R",
+      "file": "data/fixtures/case_qss/r_hall_pension.png"
+    }
+  ]
+}

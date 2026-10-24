@@ -1,0 +1,13 @@
+# Tested with Python 3.11 (exact versions verified in this repository; see requirements.lock for the full set)
+langgraph==1.2.17
+langgraph-checkpoint-sqlite==3.1.2
+anthropic==2.3.0
+mcp==2.3.0
+pydantic==2.14.1
+streamlit==1.66.1
+pymupdf==2.0
+pillow==13.0.0
+rapidocr-onnxruntime==1.4.4
+python-dotenv==1.2.4
+matplotlib==3.11.2
+pytest==9.1.1

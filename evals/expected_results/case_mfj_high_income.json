@@ -1,0 +1,17 @@
+{
+  "case": "case_mfj_high_income",
+  "worked_by": "Hand-worked; not produced by SilverFile code.",
+  "filing_status": "mfj",
+  "outcome": "draft",
+  "lines": {"1z": "192500", "2b": "2750", "6a": "0", "6b": "0", "9": "195250", "11b": "195250", "12e": "36300",
+            "13b": "6570", "14": "42870", "15": "152380", "16": "23352", "24": "23352", "25a": "28400", "25b": "0",
+            "33": "28400", "34": "5048", "37": "0"},
+  "boxes_12d": 3,
+  "notes": [
+    "Two W-2s: 168,000 + 24,500 = 192,500 (1z); withholding 26,000 + 2,400 = 28,400 (25a).",
+    "Boxes: Robert 65+, Linda 65+, Linda blind = 3 -> MFJ chart $36,300.",
+    "Senior deduction: MAGI 195,250 - 150,000 = 45,250; x 6% = 2,715; 6,000 - 2,715 = 3,285 per person x 2 = 6,570.",
+    "15 = 195,250 - (36,300 + 6,570) = 152,380. Tax Computation Worksheet MFJ: 152,380 x 0.22 - 10,172 = 23,351.60 -> 23,352.",
+    "Overpayment 28,400 - 23,352 = 5,048."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "answers": {
+    "answerer": "I'm answering for myself",
+    "return_type_ok": "yes",
+    "spouse_died_2025": "no",
+    "tp_blind": "no",
+    "tp_claimable": "no",
+    "us_resident": "yes",
+    "dependents_any": "no",
+    "has_w2": "1",
+    "has_1099int": "0",
+    "has_1099div": "0",
+    "has_1099r": "0",
+    "has_ssa1099": "0",
+    "other_income": "no",
+    "itemize": "no",
+    "est_any": "no",
+    "sched_any": "no",
+    "refund_method": "check",
+    "upload_docs": "done",
+    "confirm_summary": "yes",
+    "dep_more": "no",
+    "tp_first_name": "Eleanor",
+    "tp_last_name": "Whitfield",
+    "tp_dob": "March 14, 1957",
+    "filing_status": "Single",
+    "tp_ssn": "900-55-1234",
+    "stated_wages": "about 46,000"
+  },
+  "purpose": "Clean minimal run: single filer, one W-2 image, nonzero tax, refund.",
+  "documents": [
+    {
+      "type": "W-2",
+      "file": "data/fixtures/eval_case_1/w2_maple_grove.png"
+    }
+  ]
+}

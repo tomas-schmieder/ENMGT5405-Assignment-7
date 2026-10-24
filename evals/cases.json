@@ -1,0 +1,24 @@
+{
+  "description": "Evaluation catalogue. Inputs live in data/fixtures/<case>/case.json (answers + document images); hand-worked expected results for completed drafts live in evals/expected_results/<case>.json and are never loaded by the running agents. Run all with: python run.py eval",
+  "cases": [
+    {"id": "eval_case_1", "kind": "required_demo", "expect": "draft", "purpose": "Clean minimal run: single filer, one W-2 image."},
+    {"id": "eval_case_2", "kind": "required_demo", "expect": "draft", "expect_review": "user_document_conflict", "purpose": "HITL: stated wages conflict with the W-2; resolved by a reviewer."},
+    {"id": "grader_style_unseen", "kind": "unseen_input", "expect": "draft", "purpose": "Different W-2 (cents, age-65 boundary) through the same path."},
+    {"id": "case_single_retiree_mixed", "kind": "coverage", "expect": "draft", "purpose": "SS + interest (taxable and exempt) + qualified dividends + IRA with QCD + pension + estimates."},
+    {"id": "case_mfj_high_income", "kind": "coverage", "expect": "draft", "purpose": "MFJ, two W-2s in parallel, 3 boxes, senior phaseout, Tax Computation Worksheet."},
+    {"id": "case_hoh_dependent", "kind": "coverage", "expect": "draft", "purpose": "Head of household with a dependent."},
+    {"id": "case_mfs_lived_apart", "kind": "coverage", "expect": "draft", "purpose": "Married filing separately, lived apart; no senior deduction."},
+    {"id": "case_qss", "kind": "coverage", "expect": "draft", "purpose": "Qualifying surviving spouse."},
+    {"id": "stop_1099r_2b", "kind": "mandatory_stop", "expect": "escalation", "reason": "form_1099r_2b"},
+    {"id": "stop_advice", "kind": "mandatory_stop", "expect": "escalation", "reason": "advice_request"},
+    {"id": "stop_spouse_died", "kind": "mandatory_stop", "expect": "escalation", "reason": "filing_status_ambiguity"},
+    {"id": "stop_exploitation", "kind": "mandatory_stop", "expect": "escalation", "reason": "exploitation_concern"},
+    {"id": "stop_third_party", "kind": "mandatory_stop", "expect": "escalation", "reason": "exploitation_concern"},
+    {"id": "stop_crypto", "kind": "mandatory_stop", "expect": "escalation", "reason": "out_of_scope"},
+    {"id": "stop_itemize", "kind": "mandatory_stop", "expect": "escalation", "reason": "out_of_scope"},
+    {"id": "stop_too_young", "kind": "mandatory_stop", "expect": "escalation", "reason": "out_of_scope"},
+    {"id": "stop_capital_gain_dist", "kind": "mandatory_stop", "expect": "escalation", "reason": "out_of_scope"},
+    {"id": "stop_real_ssn_w2", "kind": "security", "expect": "escalation", "reason": "document_problem"},
+    {"id": "bench_ten_docs", "kind": "context_benchmark", "expect": "benchmark", "purpose": "Ten documents in one thread; run with python run.py benchmark"}
+  ]
+}

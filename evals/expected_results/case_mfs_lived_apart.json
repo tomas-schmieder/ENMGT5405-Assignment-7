@@ -1,0 +1,13 @@
+{
+  "case": "case_mfs_lived_apart",
+  "worked_by": "Hand-worked; not produced by SilverFile code.",
+  "filing_status": "mfs",
+  "outcome": "draft",
+  "lines": {"5a": "20000", "5b": "20000", "6a": "30000", "6b": "5350", "9": "25350", "11b": "25350", "12e": "17350",
+            "13b": "0", "14": "17350", "15": "8000", "16": "803", "24": "803", "25b": "2000", "33": "2000",
+            "34": "1197", "37": "0"},
+  "boxes_12d": 1,
+  "notes": ["MFS lived apart all year -> $25,000 / $9,000 amounts: L2 15,000; L3 20,000; L5 35,000; L9 10,000; L11 1,000; L13 4,500; L14 4,500; L15 850; L16 5,350; L17 25,500 -> 6b 5,350.",
+            "MFS chart 1 box = 17,350. Enhanced senior deduction not allowed for MFS -> 13b 0.",
+            "15 = 25,350 - 17,350 = 8,000; Tax Table MFS row 8,000-8,050 = 803; 25b 2,000; refund 1,197."]
+}

@@ -1,0 +1,11 @@
+{
+  "case": "case_hoh_dependent",
+  "worked_by": "Hand-worked; not produced by SilverFile code.",
+  "filing_status": "hoh",
+  "outcome": "draft",
+  "lines": {"1z": "38400", "9": "38400", "11b": "38400", "12e": "25625", "13b": "6000", "14": "31625", "15": "6775",
+            "16": "678", "24": "678", "25a": "2100", "33": "2100", "34": "1422", "37": "0"},
+  "boxes_12d": 1,
+  "notes": ["HOH base 23,625 + 2,000 (1 box) = 25,625; 15 = 38,400 - 31,625 = 6,775; Tax Table HOH row 6,750-6,800 = 678; refund 1,422.",
+            "Dependent Mateo Ramos (grandson, 900-44-2021) on the form; line 19 direct input $0."]
+}

@@ -1,0 +1,20 @@
+{
+  "case": "eval_case_1",
+  "worked_by": "Hand-worked from the assignment rules and the 2025 Form 1040-SR / Instructions; not produced by SilverFile code.",
+  "filing_status": "single",
+  "outcome": "draft",
+  "lines": {"1z": "46850", "2a": "0", "2b": "0", "3a": "0", "3b": "0", "4a": "0", "4b": "0", "5a": "0", "5b": "0",
+            "6a": "0", "6b": "0", "9": "46850", "10": "0", "11a": "46850", "11b": "46850", "12e": "17750",
+            "13b": "6000", "14": "23750", "15": "23100", "16": "2537", "24": "2537", "25a": "3980", "25b": "0",
+            "25c": "0", "25d": "3980", "26": "0", "33": "3980", "34": "1443", "37": "0"},
+  "boxes_12d": 1,
+  "notes": [
+    "W-2 box 1 $46,850.00 -> 1z; box 2 $3,980.00 -> 25a.",
+    "Born 1957-03-14 (before 1961-01-02): 1 box; Single base $15,750 + $2,000 = $17,750 (chart: 1 box Single = $17,750).",
+    "Enhanced senior deduction: MAGI $46,850 <= $75,000 -> $6,000 (line 13b).",
+    "Line 14 = 17,750 + 6,000 = 23,750; line 15 = 46,850 - 23,750 = 23,100.",
+    "Tax Table row 23,100-23,150 Single = $2,537 (IRS table; midpoint 23,125: 1,192.50 + 12% x 11,200 = 2,536.50 -> 2,537).",
+    "Overpayment 3,980 - 2,537 = 1,443.",
+    "Stated wages 'about 46,000' vs $46,850: difference $850 is below max($1,000, 10%) -> no conflict."
+  ]
+}

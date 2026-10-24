@@ -1,0 +1,409 @@
+{
+  "version": "2025.1",
+  "description": "SilverFile course-scope rule corpus. Each rule cites the assignment (authoritative for scope) and/or a verified page of an IRS document listed in data/source_manifest.json. Logic for each rule id lives in src/rules.py; tests in tests/unit/test_decision_table.py.",
+  "rules": [
+    {
+      "id": "R-ELIG-01",
+      "title": "Form 1040-SR eligibility",
+      "kind": "eligibility",
+      "description": "The taxpayer must have been born before January 2, 1961. On a joint return only one spouse needs to meet this. There is no income restriction.",
+      "inputs": ["taxpayer.dob", "spouse.dob", "filing_status"],
+      "decision": "eligible if taxpayer.dob < 1961-01-02, or filing_status == mfj and spouse.dob < 1961-01-02; otherwise out of scope (escalate).",
+      "citations": [
+        {"doc": "assignment", "section": "§3.2(1)"},
+        {"doc": "irs-i1040-2025", "page": 12, "section": "What form to file"},
+        {"doc": "irs-i1040-2025", "page": 3, "section": "Which schedules / Form 1040-SR option"}
+      ]
+    },
+    {
+      "id": "R-FS-01",
+      "title": "Filing status validation",
+      "kind": "eligibility",
+      "description": "The chosen filing status must be one of the five statuses and consistent with the facts collected: single/head of household require not married at year end; joint/separate require married at year end; head of household requires a qualifying person; qualifying surviving spouse requires a spouse who died in 2023 or 2024 and a dependent child.",
+      "inputs": ["filing_status", "married_end_of_year", "spouse_died_year", "hoh_qualifying_person", "qss_dependent_child", "dependents"],
+      "decision": "valid when the facts support the chosen status; inconsistent or unknown -> filing-status ambiguity escalation (R-HITL-05).",
+      "citations": [
+        {"doc": "assignment", "section": "§4 Eligibility & Rules; §4.4(5)"},
+        {"doc": "irs-i1040-2025", "page": 13, "section": "Filing Status: Single, Married Filing Jointly"},
+        {"doc": "irs-i1040-2025", "page": 14, "section": "Head of Household; Qualifying Surviving Spouse"}
+      ]
+    },
+    {
+      "id": "R-FS-02",
+      "title": "Spouse died during the tax year",
+      "kind": "escalation",
+      "description": "A spouse who died during 2025 makes the filing status ambiguous (MFJ vs QSS vs Single) and also affects the line 12d age box. Always escalate to a human.",
+      "inputs": ["spouse_died_year"],
+      "decision": "spouse_died_year == 2025 -> escalate (filing_status_ambiguity).",
+      "citations": [
+        {"doc": "assignment", "section": "§4.4(5)"},
+        {"doc": "irs-i1040-2025", "page": 33, "section": "Line 12d, Death of spouse in 2025"}
+      ]
+    },
+    {
+      "id": "R-SD-01",
+      "title": "Line 12d box count",
+      "kind": "computation-input",
+      "description": "One box each for: taxpayer born before January 2, 1961; taxpayer blind; spouse born before January 2, 1961; spouse blind. Spouse boxes only on a joint return, or on a separate return when the spouse had no income, is not filing, and cannot be claimed as a dependent. No spouse boxes for head of household.",
+      "inputs": ["taxpayer.dob", "taxpayer.blind", "spouse.dob", "spouse.blind", "filing_status", "mfs_spouse_no_income"],
+      "decision": "boxes computed deterministically from dates and yes/no answers; count read by the standard_deduction MCP tool.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.2(2)"},
+        {"doc": "irs-i1040-2025", "page": 33, "section": "Line 12d"}
+      ]
+    },
+    {
+      "id": "R-SD-02",
+      "title": "Standard Deduction Chart exceptions",
+      "kind": "escalation",
+      "description": "The chart does not apply if the taxpayer (or spouse on a joint return) can be claimed as a dependent, if a separately filing spouse itemizes, or if the taxpayer was a dual-status alien. All three are escalation conditions.",
+      "inputs": ["can_be_claimed_as_dependent", "spouse_itemizes", "dual_status_alien"],
+      "decision": "any true -> escalate (out_of_scope, standard_deduction_exception).",
+      "citations": [
+        {"doc": "assignment", "section": "§3.2(2)"},
+        {"doc": "irs-f1040sr-2025", "page": 4, "section": "Standard Deduction Chart footnote *"},
+        {"doc": "irs-i1040-2025", "page": 33, "section": "Lines 12a-12c"}
+      ]
+    },
+    {
+      "id": "R-SD-03",
+      "title": "Standard Deduction Chart amounts",
+      "kind": "computation",
+      "description": "Base: $15,750 Single/MFS; $31,500 MFJ/QSS; $23,625 HOH. Each checked line 12d box adds $2,000 if unmarried and not a surviving spouse, otherwise $1,600.",
+      "inputs": ["filing_status", "box_count"],
+      "decision": "computed by MCP tool standard_deduction; audited against a literal copy of the chart.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.2(2)"},
+        {"doc": "irs-f1040sr-2025", "page": 4, "section": "Standard Deduction Chart"}
+      ]
+    },
+    {
+      "id": "R-ESD-01",
+      "title": "Enhanced deduction for seniors",
+      "kind": "computation",
+      "description": "Up to $6,000 per qualifying person (born before January 2, 1961, with a valid SSN; in this classroom system a fictional 900-series SSN). $12,000 if both spouses qualify on a joint return. Claimed on Schedule 1-A and carried to line 13b. Separate from the additional standard deduction on line 12d. Applies to tax years 2025-2028.",
+      "inputs": ["taxpayer.dob", "spouse.dob", "filing_status", "ssn_valid"],
+      "decision": "computed by MCP tool enhanced_senior_deduction.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.2(3)"},
+        {"doc": "irs-sch1a-2025", "page": 2, "section": "Part V, lines 31-37"},
+        {"doc": "irs-i1040-2025", "page": 7, "section": "What's New: Enhanced deduction for seniors"}
+      ]
+    },
+    {
+      "id": "R-ESD-02",
+      "title": "Enhanced deduction: married must file jointly",
+      "kind": "computation",
+      "description": "If married, the taxpayer must file jointly to claim the enhanced deduction; married filing separately gets $0.",
+      "inputs": ["filing_status"],
+      "decision": "mfs -> 13b = 0.",
+      "citations": [
+        {"doc": "irs-sch1a-2025", "page": 2, "section": "Part V caution"},
+        {"doc": "irs-i1040-2025", "page": 7, "section": "What's New: Enhanced deduction for seniors"}
+      ]
+    },
+    {
+      "id": "R-ESD-03",
+      "title": "Enhanced deduction phaseout",
+      "kind": "computation",
+      "description": "Reduced by 6% of MAGI above $75,000 ($150,000 joint), applied per qualifying individual, floored at zero. MAGI = Form 1040-SR line 11b plus Puerto Rico / Form 2555 / Form 4563 exclusions (none in scope, so MAGI = AGI).",
+      "inputs": ["line_11b", "filing_status"],
+      "decision": "computed by MCP tool enhanced_senior_deduction.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.2(3)"},
+        {"doc": "irs-sch1a-2025", "page": 1, "section": "Part I, lines 1-3 (MAGI)"},
+        {"doc": "irs-sch1a-2025", "page": 2, "section": "Part V, lines 31-35"}
+      ]
+    },
+    {
+      "id": "R-SS-01",
+      "title": "Social Security Benefits Worksheet",
+      "kind": "computation",
+      "description": "Taxable benefits from provisional income (other income + tax-exempt interest + half of benefits, less certain Schedule 1 adjustments) against $25,000/$32,000 base and $34,000/$44,000 second-tier amounts (expressed on the worksheet as $9,000/$12,000 above the base). Married filing separately and living with spouse: 85% of line 7.",
+      "inputs": ["ssa1099.box5", "lines 1z,2b,3b,4b,5b,7a,8,2a", "schedule1 lines 11-20,23,25", "filing_status", "mfs_lived_apart"],
+      "decision": "computed by MCP tool taxable_social_security.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.2(4)"},
+        {"doc": "irs-i1040-2025", "page": 32, "section": "Social Security Benefits Worksheet - Lines 6a and 6b"},
+        {"doc": "irs-p915-2025", "page": 4, "section": "Base amount"}
+      ]
+    },
+    {
+      "id": "R-SS-02",
+      "title": "Social Security ordering dependency",
+      "kind": "orchestration",
+      "description": "The worksheet needs every other income line before it can run, and line 6b then feeds line 9 and AGI. The computation plan therefore computes 1z, 2a/2b, 3a/3b, 4a/4b, 5a/5b, 8 first, then 6b, then line 9, then 11a/11b.",
+      "inputs": [],
+      "decision": "enforced by the computation agent's dependency order and tested in tests/unit/test_computation_order.py.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.2(4)"}
+      ]
+    },
+    {
+      "id": "R-SS-03",
+      "title": "Social Security worksheet exceptions",
+      "kind": "escalation",
+      "description": "Repayments exceeding benefits (negative box 5), lump-sum elections for earlier years, and the Pub. 590-A / Pub. 915 cases are not handled by the in-scope worksheet.",
+      "inputs": ["ssa1099.box5", "ssa1099.box4"],
+      "decision": "box 5 < 0 -> escalate (out_of_scope).",
+      "citations": [
+        {"doc": "irs-i1040-2025", "page": 31, "section": "Lines 6a and 6b, Exception"},
+        {"doc": "irs-p915-2025", "page": 4, "section": "Lump-sum election"}
+      ]
+    },
+    {
+      "id": "R-W2-01",
+      "title": "W-2 wages and withholding",
+      "kind": "mapping",
+      "description": "Box 1 (wages, tips, other compensation) of every W-2 is added for line 1a and carried to line 1z; box 2 (federal income tax withheld) is added for line 25a. Lines 1b-1i are not used by SilverFile (other wage types escalate as out of scope).",
+      "inputs": ["w2.box1", "w2.box2"],
+      "decision": "aggregated by MCP tool aggregate_amounts.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.1 lines 1z and 25a"},
+        {"doc": "irs-i1040-2025", "page": 23, "section": "Line 1a"},
+        {"doc": "irs-iw2w3-2025", "page": 17, "section": "Box 1 / Box 2"},
+        {"doc": "irs-i1040-2025", "page": 39, "section": "Line 25a"}
+      ]
+    },
+    {
+      "id": "R-INT-01",
+      "title": "1099-INT interest",
+      "kind": "mapping",
+      "description": "Taxable interest (line 2b) = box 1 + box 3; tax-exempt interest (line 2a) = box 8; box 4 withholding goes to line 25b.",
+      "inputs": ["1099int.box1", "1099int.box3", "1099int.box8", "1099int.box4"],
+      "decision": "aggregated by MCP tool aggregate_amounts.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.1 line 2a/2b"},
+        {"doc": "irs-i1040-2025", "page": 25, "section": "Line 2a / Line 2b"}
+      ]
+    },
+    {
+      "id": "R-DIV-01",
+      "title": "1099-DIV dividends",
+      "kind": "mapping",
+      "description": "Ordinary dividends (line 3b) = box 1a; qualified dividends (line 3a) = box 1b, a subset of 1a, never added again; exempt-interest dividends (box 12) go to line 2a; box 4 withholding goes to line 25b. Capital gain distributions (box 2a > 0) need line 7a and are escalated as capital gains.",
+      "inputs": ["1099div.box1a", "1099div.box1b", "1099div.box2a", "1099div.box4", "1099div.box12"],
+      "decision": "aggregated by MCP tool aggregate_amounts; box 2a > 0 -> escalate.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.1 line 3a/3b; §3.3"},
+        {"doc": "irs-i1040-2025", "page": 25, "section": "Line 3a / Line 3b"}
+      ]
+    },
+    {
+      "id": "R-IRA-01",
+      "title": "IRA distributions (lines 4a/4b)",
+      "kind": "mapping",
+      "description": "A 1099-R with the IRA/SEP/SIMPLE box checked and distribution code 7 is an IRA distribution: line 4a = box 1, line 4b = box 2a less any qualified charitable distribution. SilverFile fills 4a with the total even when fully taxable because the assignment table requires it (IRS instructions would leave 4a blank; see docs/ASSUMPTIONS.md A-14). Roth, rollover, nondeductible-basis (Form 8606) and other codes are out of scope.",
+      "inputs": ["1099r.box1", "1099r.box2a", "1099r.box7_code", "1099r.ira_sep_simple", "qcd_amount"],
+      "decision": "aggregated by MCP tool aggregate_amounts.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.1 line 4a/4b"},
+        {"doc": "irs-i1040-2025", "page": 26, "section": "Lines 4a and 4b"},
+        {"doc": "irs-i1040-2025", "page": 27, "section": "Exceptions 1-3"}
+      ]
+    },
+    {
+      "id": "R-IRA-02",
+      "title": "Qualified charitable distribution (QCD)",
+      "kind": "mapping",
+      "description": "If all or part of an IRA distribution is a QCD, enter the total on 4a, exclude the QCD from 4b, and check box 2 on line 4c. The taxpayer must have been at least 70 1/2 when the distribution was made; otherwise escalate.",
+      "inputs": ["qcd_amount", "taxpayer.dob"],
+      "decision": "QCD amount is a confirmed direct input; age check deterministic.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.1 (code 7 / QCD flag)"},
+        {"doc": "irs-i1040-2025", "page": 27, "section": "Exception 3 (QCD)"}
+      ]
+    },
+    {
+      "id": "R-PEN-01",
+      "title": "Pensions and annuities (lines 5a/5b)",
+      "kind": "mapping",
+      "description": "A 1099-R without the IRA/SEP/SIMPLE box, code 7, with a determined taxable amount: line 5a = box 1, line 5b = box 2a. SilverFile fills 5a with the total even when fully taxable (assignment table; docs/ASSUMPTIONS.md A-14).",
+      "inputs": ["1099r.box1", "1099r.box2a", "1099r.box7_code"],
+      "decision": "aggregated by MCP tool aggregate_amounts.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.1 line 5a/5b"},
+        {"doc": "irs-i1040-2025", "page": 28, "section": "Lines 5a and 5b"}
+      ]
+    },
+    {
+      "id": "R-1099R-01",
+      "title": "1099-R taxable amount not determined",
+      "kind": "escalation",
+      "description": "Any 1099-R with box 2b 'taxable amount not determined' checked needs the Simplified Method or General Rule, neither of which is in scope. Escalate regardless of other information.",
+      "inputs": ["1099r.box2b_not_determined"],
+      "decision": "checked -> escalate (form_1099r_2b). A reviewer may only refer the case or correct a misread checkbox; it cannot be made eligible.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.3; §4.4(3)"},
+        {"doc": "irs-i1040-2025", "page": 28, "section": "Partially Taxable Pensions and Annuities"},
+        {"doc": "irs-i1099r-2025", "page": 13, "section": "Box 2b"}
+      ]
+    },
+    {
+      "id": "R-1099R-02",
+      "title": "1099-R distribution code",
+      "kind": "escalation",
+      "description": "Only distribution code 7 (normal distribution) is in scope. Early distributions, rollovers (G/H), Roth codes (Q/T/J), death benefits and others need rules outside the assignment.",
+      "inputs": ["1099r.box7_code"],
+      "decision": "code != 7 -> escalate (out_of_scope).",
+      "citations": [
+        {"doc": "assignment", "section": "§3.1 (code 7)"},
+        {"doc": "irs-i1099r-2025", "page": 19, "section": "Guide to Distribution Codes"}
+      ]
+    },
+    {
+      "id": "R-SSA-01",
+      "title": "SSA-1099 mapping",
+      "kind": "mapping",
+      "description": "Box 5 (net benefits) of all SSA-1099s is line 6a and worksheet line 1; box 6 (voluntary federal income tax withheld) goes to line 25b.",
+      "inputs": ["ssa1099.box5", "ssa1099.box6"],
+      "decision": "aggregated by MCP tool aggregate_amounts.",
+      "citations": [
+        {"doc": "irs-i1040-2025", "page": 32, "section": "Worksheet line 1"},
+        {"doc": "irs-i1040-2025", "page": 39, "section": "Line 25b (SSA-1099 box 6)"}
+      ]
+    },
+    {
+      "id": "R-WH-01",
+      "title": "Withholding classification",
+      "kind": "mapping",
+      "description": "Line 25a: W-2 box 2. Line 25b: 1099-INT/DIV/R box 4 and SSA-1099 box 6. Line 25c: other forms (W-2G, 8959, K-1, 1042-S) - none are in scope, so 25c is $0.",
+      "inputs": [],
+      "decision": "aggregated by MCP tool aggregate_amounts.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.1 lines 25a-25d"},
+        {"doc": "irs-i1040-2025", "page": 39, "section": "Lines 25a-25c"}
+      ]
+    },
+    {
+      "id": "R-SCHED-01",
+      "title": "Schedules 1, 2 and 3 direct inputs",
+      "kind": "mapping",
+      "description": "Schedule 1 line 10 -> line 8; Schedule 1 line 26 -> line 10; Schedule 2 line 3 -> line 17; Schedule 3 line 8 -> line 20; Schedule 2 line 21 -> line 23; Schedule 3 line 15 -> line 31. The taxpayer enters these totals directly; each is recorded as direct user input. Schedule 1 line 21 (student loan interest) is collected so the Social Security worksheet can use lines 11-20, 23 and 25 only.",
+      "inputs": ["sched1.line10", "sched1.line26", "sched1.line21", "sched2.line3", "sched2.line21", "sched3.line8", "sched3.line15"],
+      "decision": "direct input with provenance.",
+      "citations": [
+        {"doc": "assignment", "section": "§3.3 (Schedules 1, 2 and 3 - user directly inputs values); §4.2"},
+        {"doc": "irs-i1040-2025", "page": 32, "section": "Worksheet line 6"}
+      ]
+    },
+    {
+      "id": "R-PAY-01",
+      "title": "Total payments",
+      "kind": "computation",
+      "description": "Line 25d = 25a + 25b + 25c; line 26 = estimated payments from intake; line 33 = 25d + 26 + 32 (line 32 = refundable credits; only Schedule 3 line 15 is in scope).",
+      "inputs": [],
+      "decision": "computed by MCP tool total_payments.",
+      "citations": [{"doc": "assignment", "section": "§3.1 lines 25d, 26, 33"}, {"doc": "irs-f1040sr-2025", "page": 3, "section": "Lines 25-33"}]
+    },
+    {
+      "id": "R-PAY-02",
+      "title": "Overpayment or amount owed",
+      "kind": "computation",
+      "description": "Line 34 = line 33 - line 24 when positive; line 37 = line 24 - line 33 when positive.",
+      "inputs": [],
+      "decision": "computed by MCP tool refund_or_amount_owed.",
+      "citations": [{"doc": "assignment", "section": "§3.1 lines 34/37"}, {"doc": "irs-f1040sr-2025", "page": 3, "section": "Lines 34-37"}]
+    },
+    {
+      "id": "R-LINE9-01", "title": "Total income", "kind": "computation",
+      "description": "Line 9 = 1z + 2b + 3b + 4b + 5b + 6b + 7a + 8.", "inputs": [], "decision": "MCP tool total_income.",
+      "citations": [{"doc": "irs-f1040sr-2025", "page": 2, "section": "Line 9"}]
+    },
+    {
+      "id": "R-AGI-01", "title": "Adjusted gross income", "kind": "computation",
+      "description": "Line 11a = line 9 - line 10; line 11b repeats line 11a.", "inputs": [], "decision": "MCP tool adjusted_gross_income.",
+      "citations": [{"doc": "irs-f1040sr-2025", "page": 2, "section": "Lines 10-11b"}]
+    },
+    {
+      "id": "R-LINE14-01", "title": "Deductions and taxable income", "kind": "computation",
+      "description": "Line 14 = 12e + 13a + 13b (13a QBI is out of scope, $0); line 15 = 11b - 14, not less than zero.", "inputs": [], "decision": "MCP tool deductions_and_taxable_income.",
+      "citations": [{"doc": "irs-f1040sr-2025", "page": 2, "section": "Lines 14-15"}]
+    },
+    {
+      "id": "R-TAX-01", "title": "Tax on taxable income", "kind": "computation",
+      "description": "Tax Table for taxable income under $100,000 (row-midpoint method, verified against every printed row), Tax Computation Worksheet at $100,000 or more.", "inputs": ["line_15", "filing_status"], "decision": "MCP tool income_tax.",
+      "citations": [{"doc": "assignment", "section": "§3.1 line 16"}, {"doc": "irs-i1040-2025", "page": 68, "section": "2025 Tax Table"}, {"doc": "irs-i1040-2025", "page": 80, "section": "2025 Tax Computation Worksheet"}]
+    },
+    {
+      "id": "R-TAX-02", "title": "Qualified dividends tax method", "kind": "computation",
+      "description": "When line 3a is positive, line 16 uses the Qualified Dividends and Capital Gain Tax Worksheet so qualified dividends are taxed at 0/15/20% rather than as ordinary income. The assignment's 'rate schedule' wording is interpreted to include this worksheet (docs/ASSUMPTIONS.md A-11).", "inputs": ["line_15", "line_3a"], "decision": "MCP tool income_tax.",
+      "citations": [{"doc": "irs-i1040-2025", "page": 38, "section": "Qualified Dividends and Capital Gain Tax Worksheet"}]
+    },
+    {
+      "id": "R-LINE24-01", "title": "Total tax", "kind": "computation",
+      "description": "Lines 17-24 using direct Schedule 2/3 inputs; line 19 credits only as a direct input when dependents are claimed.", "inputs": [], "decision": "MCP tool total_tax.",
+      "citations": [{"doc": "irs-f1040sr-2025", "page": 2, "section": "Lines 16-24"}]
+    },
+    {
+      "id": "R-ROUND-01", "title": "Whole-dollar rounding", "kind": "computation",
+      "description": "All amounts are rounded to whole dollars (drop under 50 cents, raise 50-99 cents). When adding two or more amounts for one line, cents are kept and only the total is rounded.", "inputs": [], "decision": "applied inside every MCP tool.",
+      "citations": [{"doc": "irs-i1040-2025", "page": 23, "section": "Rounding Off to Whole Dollars"}]
+    },
+    {
+      "id": "R-AUDIT-01", "title": "Independent audit checks", "kind": "audit",
+      "description": "The Review / Audit agent recomputes totals, checks 6b <= 6a (and <= 85% of 6a), 3a <= 3b, 4b <= 4a, 5b <= 5a, standard deduction against the literal chart, provenance completeness and scope before any human sees the return.", "inputs": [], "decision": "MCP tool verify_return plus provenance checks.",
+      "citations": [{"doc": "assignment", "section": "§4 Review / Audit"}]
+    },
+    {
+      "id": "R-CONFLICT-01", "title": "User statement vs document conflict", "kind": "escalation",
+      "description": "If the taxpayer's stated wages differ from the W-2 total by more than the larger of $1,000 or 10% (project tolerance), Intake asks one follow-up question. If the conflict remains, escalate.", "inputs": ["stated_wages", "w2.box1 total"], "decision": "MCP tool compare_amounts; unresolved after follow-up -> escalate (user_document_conflict).",
+      "citations": [{"doc": "assignment", "section": "§4.4(2)"}]
+    },
+    {
+      "id": "R-DOC-01", "title": "Document identity checks", "kind": "guardrail",
+      "description": "Every document must be for tax year 2025, show a fictional 900-series SSN, and belong to the taxpayer or spouse (SSN last four match). Otherwise ask the taxpayer (wrong year / wrong person) or reject the upload (real-looking SSN).", "inputs": ["document.tax_year", "document.recipient_ssn"], "decision": "deterministic checks in the extraction aggregator and rules agent.",
+      "citations": [{"doc": "assignment", "section": "§3.2 (fake SSNs only)"}]
+    },
+    {
+      "id": "R-DEP-01", "title": "Dependents", "kind": "guardrail",
+      "description": "Dependents need name, fictional SSN and relationship (assignment §3.1). The form has four dependent slots; more than four escalates. Credits for dependents (Schedule 8812) are not calculated; line 19 is only filled from a direct input.", "inputs": ["dependents"], "decision": "deterministic.",
+      "citations": [{"doc": "assignment", "section": "§3.1 Dependents"}, {"doc": "irs-f1040sr-2025", "page": 1, "section": "Dependents (if more than four, see instructions)"}]
+    },
+    {
+      "id": "R-SCOPE-01", "title": "Out-of-scope income and situations", "kind": "escalation",
+      "description": "Itemized deductions (Schedule A); self-employment or business income (Schedule C, 1099-NEC); rental income (Schedule E); capital gains requiring Schedule D; digital assets; foreign income or accounts; amended or prior-year returns; state returns; more than four dependents; wages not on a W-2. Escalate to a human, never attempt.", "inputs": ["other_income", "itemize", "return_type", "flags"], "decision": "any present -> escalate (out_of_scope).",
+      "citations": [{"doc": "assignment", "section": "§3.3; §4.4(1)"}]
+    },
+    {
+      "id": "R-HITL-01", "title": "Escalation: out of scope", "kind": "escalation",
+      "description": "Any out-of-scope item from §3.3 interrupts the graph for a human reviewer.", "inputs": [], "decision": "LangGraph interrupt.", "citations": [{"doc": "assignment", "section": "§4.4(1)"}]
+    },
+    {
+      "id": "R-HITL-02", "title": "Escalation: unresolved user/document conflict", "kind": "escalation",
+      "description": "See R-CONFLICT-01.", "inputs": [], "decision": "LangGraph interrupt.", "citations": [{"doc": "assignment", "section": "§4.4(2)"}]
+    },
+    {
+      "id": "R-HITL-03", "title": "Escalation: 1099-R box 2b", "kind": "escalation",
+      "description": "See R-1099R-01.", "inputs": [], "decision": "LangGraph interrupt.", "citations": [{"doc": "assignment", "section": "§4.4(3)"}]
+    },
+    {
+      "id": "R-HITL-04", "title": "Escalation: advice request", "kind": "escalation",
+      "description": "Requests for tax advice, planning or optimisation (e.g. Roth conversion, filing separately to pay less, deducting medications) are out of scope: explain the scope, note the question for a volunteer preparer, and escalate.", "inputs": [], "decision": "LangGraph interrupt.", "citations": [{"doc": "assignment", "section": "§2; §4.4(4)"}]
+    },
+    {
+      "id": "R-HITL-05", "title": "Escalation: filing-status ambiguity", "kind": "escalation",
+      "description": "Including a spouse who died during the tax year, an unsure taxpayer, or facts inconsistent with the chosen status.", "inputs": [], "decision": "LangGraph interrupt.", "citations": [{"doc": "assignment", "section": "§4.4(5)"}]
+    },
+    {
+      "id": "R-HITL-06", "title": "Escalation: financial exploitation or third-party pressure", "kind": "escalation",
+      "description": "For example a refund routed to an account the taxpayer cannot describe or that is not in their name, or a third party answering for the taxpayer without stated authority. SilverFile notices and stops; it does not adjudicate.", "inputs": ["refund_account_own", "answerer", "authority"], "decision": "LangGraph interrupt.", "citations": [{"doc": "assignment", "section": "§4.4(6)"}]
+    },
+    {
+      "id": "R-ADVICE-01", "title": "No tax advice", "kind": "guardrail",
+      "description": "Transcription and arithmetic are allowed; optimisation and planning are advice and are never given.", "inputs": [], "decision": "intake guardrail + R-HITL-04.", "citations": [{"doc": "assignment", "section": "§2"}]
+    },
+    {
+      "id": "R-FILE-01", "title": "Never file", "kind": "guardrail",
+      "description": "The output is a draft plus an audit record for a human. 'Submitted' in the dashboard means submitted internally for human review, never to the IRS.", "inputs": [], "decision": "no filing capability exists in the code.", "citations": [{"doc": "assignment", "section": "§2"}]
+    },
+    {
+      "id": "R-AMOUNT-01", "title": "Never assert an unsourced amount", "kind": "guardrail",
+      "description": "Every monetary value on the draft carries a provenance record: a document box, a dated direct user input, a reviewer correction, or an MCP tool run over those.", "inputs": [], "decision": "enforced by return assembly; missing lineage blocks draft-ready.", "citations": [{"doc": "assignment", "section": "§2; §3.3 Central requirement; §4.2"}]
+    },
+    {
+      "id": "R-SSN-01", "title": "Fictional SSNs only", "kind": "guardrail",
+      "description": "Accept only nine-digit SSNs with a 900-999 prefix, formatted or unformatted, normalised to 9XX-XX-XXXX. Classroom constraint, not a real-world validity rule.", "inputs": [], "decision": "src/ssn.py.", "citations": [{"doc": "assignment", "section": "§3.2"}]
+    }
+  ]
+}
