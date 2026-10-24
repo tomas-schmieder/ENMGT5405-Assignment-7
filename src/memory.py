@@ -67,6 +67,23 @@ def session_summary(state: dict, labels: dict[str, str] | None = None) -> str:
     return "\n".join(parts)
 
 
+def intake_summary(state: dict) -> str:
+    """Minimal session summary for interpreting one reply: which earlier
+    questions exist (so corrections can name them), the filing status, and open
+    follow-ups. Values are deliberately omitted - the reply's meaning never
+    depends on them, and they stay in durable state."""
+    intake = state.get("intake") or {}
+    asked = intake.get("asked") or []
+    parts = ["ANSWERED QUESTION IDS: " + (", ".join(asked) if asked else "none yet")]
+    fs = fact_value(state, "filing_status")
+    if fs:
+        parts.append(f"FILING STATUS: {fs}")
+    open_f = [f["id"] for f in intake.get("followups") or [] if f.get("status", "open") == "open"]
+    if open_f:
+        parts.append("OPEN FOLLOW-UPS: " + ", ".join(open_f))
+    return "\n".join(parts)
+
+
 def transcript_messages(transcript: list[dict]) -> list[dict]:
     """Convert stored transcript entries to alternating API messages."""
     msgs: list[dict] = []
@@ -92,7 +109,7 @@ def build_intake_context(state: dict, question_text: str, user_text: str, *, str
     if strategy_enabled:
         recent = transcript[-recent_turns * 2:] if recent_turns > 0 else []
         recent_txt = "\n".join(f"{e.get('role')}: {e.get('text')}" for e in recent) or "(none)"
-        content = (f"SESSION SUMMARY (authoritative, from case state):\n{session_summary(state, labels)}\n\n"
+        content = (f"SESSION SUMMARY (authoritative, from case state):\n{intake_summary(state)}\n\n"
                    f"RECENT TURNS:\n{recent_txt}\n\n{current}")
         return [{"role": "user", "content": content}]
     history = transcript_messages(transcript)

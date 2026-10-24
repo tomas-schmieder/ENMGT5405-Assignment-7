@@ -183,6 +183,7 @@ def test_context_strategy_bounds_model_input():
     on = build_intake_context(state, "Q?", "A", strategy_enabled=True, recent_turns=4, labels={})
     off = build_intake_context(state, "Q?", "A", strategy_enabled=False, recent_turns=4, labels={})
     assert len(on) == 1 and len(str(on)) < len(str(off)) / 5
+    assert "ANSWERED QUESTION IDS" in on[0]["content"]
     assert len(off) > 50
     assert "CONFIRMED FACTS" in session_summary(state)
 

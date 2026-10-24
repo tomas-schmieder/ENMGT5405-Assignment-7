@@ -1,6 +1,6 @@
 {
   "case": "case_mfs_lived_apart",
-  "case_id": "SF-20261024-75ED66",
+  "case_id": "SF-20261024-17804B",
   "status": "submitted_for_internal_review",
   "mode": "offline",
   "script": [
@@ -167,361 +167,361 @@
   ],
   "routing": [
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (filing_status)",
       "run": 6
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 7
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (spouse_died_2025)",
       "run": 7
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 8
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (tp_ssn)",
       "run": 8
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 9
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (tp_blind)",
       "run": 9
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 10
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (tp_claimable)",
       "run": 10
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 11
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (us_resident)",
       "run": 11
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 12
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (sp_first_name)",
       "run": 12
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 13
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (sp_last_name)",
       "run": 13
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 14
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (sp_ssn)",
       "run": 14
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 15
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (mfs_itemizes)",
       "run": 15
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 16
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (mfs_apart)",
       "run": 16
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 17
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (mfs_spouse_no_income)",
       "run": 17
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 18
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (dependents_any)",
       "run": 18
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 19
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (has_w2)",
       "run": 19
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 20
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (has_1099int)",
       "run": 20
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 21
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (has_1099div)",
       "run": 21
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 22
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (has_1099r)",
       "run": 22
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 23
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (qcd_any)",
       "run": 23
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 24
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (has_ssa1099)",
       "run": 24
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 25
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (other_income)",
       "run": 25
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 26
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (itemize)",
       "run": 26
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 27
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (est_any)",
       "run": 27
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 28
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (sched_any)",
       "run": 28
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 29
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (refund_method)",
       "run": 29
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 30
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "intake",
       "reason": "need taxpayer input (upload_docs)",
       "run": 30
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "next": "extract",
       "reason": "documents waiting to be read",
       "run": 31
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 31
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "next": "intake",
       "reason": "need taxpayer input (confirm_summary)",
       "run": 31
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 32
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "next": "intake",
       "reason": "intake not yet marked complete",
       "run": 32
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "next": "rules",
       "reason": "facts or documents changed since the last rules check",
       "run": 32
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "next": "computation",
       "reason": "calculation is stale",
       "run": 32
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "next": "review",
       "reason": "new calculation needs an audit",
       "run": 32
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "next": "assembly",
       "reason": "draft not yet assembled for this calculation",
       "run": 32
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:01+00:00",
       "next": "intake",
       "reason": "draft ready; ask the taxpayer whether to submit it for Kushim review",
       "run": 32
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:01+00:00",
       "next": "end",
       "reason": "submitted internally for human review",
       "run": 33
@@ -529,859 +529,859 @@
   ],
   "trace": [
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:55+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:55+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (0 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (tp_first_name)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for tp_first_name."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (0 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (tp_last_name)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for tp_last_name."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (0 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (answerer)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for answerer."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (0 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (return_type_ok)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for return_type_ok."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (0 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (tp_dob)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for tp_dob."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (0 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (filing_status)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for filing_status."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (spouse_died_2025)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for spouse_died_2025."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (tp_ssn)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for tp_ssn."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (tp_blind)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for tp_blind."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (tp_claimable)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for tp_claimable."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (us_resident)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for us_resident."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (sp_first_name)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for sp_first_name."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (sp_last_name)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for sp_last_name."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (sp_ssn)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for sp_ssn."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (mfs_itemizes)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for mfs_itemizes."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (mfs_apart)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for mfs_apart."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (mfs_spouse_no_income)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for mfs_spouse_no_income."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (dependents_any)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for dependents_any."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (has_w2)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for has_w2."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (has_1099int)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for has_1099int."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (has_1099div)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for has_1099div."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (has_1099r)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for has_1099r."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (qcd_any)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for qcd_any."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (has_ssa1099)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for has_ssa1099."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (other_income)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for other_income."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (itemize)"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for itemize."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:30+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (est_any)"
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for est_any."
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (sched_any)"
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for sched_any."
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (refund_method)"
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for refund_method."
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (upload_docs)"
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for upload_docs."
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> extract: documents waiting to be read"
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "document_extraction",
       "outcome": "success",
       "summary": "Read 1099-R doc-22de8c2887b8 (extracted)."
     },
     {
-      "at": "2026-10-24T05:57:31+00:00",
+      "at": "2026-10-24T06:27:56+00:00",
       "agent": "document_extraction",
       "outcome": "success",
       "summary": "Read SSA-1099 doc-50e888caf8ee (extracted)."
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "document_extraction",
       "outcome": "success",
       "summary": "Aggregated 2 document(s): 2 usable, 0 need attention."
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: need taxpayer input (confirm_summary)"
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for confirm_summary."
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Screening rules check: screening (2 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: intake not yet marked complete"
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Intake complete."
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> rules: facts or documents changed since the last rules check"
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "eligibility_rules",
       "outcome": "success",
       "summary": "Final rules check: ok (3 decisions)."
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> computation: calculation is stale"
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "computation",
       "outcome": "success",
       "summary": "Computed 43 lines with 32 MCP tool calls."
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> review: new calculation needs an audit"
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "review_audit",
       "outcome": "success",
       "summary": "Audit passed (18 checks, 0 advisory notes)."
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> assembly: draft not yet assembled for this calculation"
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "agent": "return_assembly",
       "outcome": "success",
       "summary": "Draft v1 assembled: 53 fields, 4 pages, values verified logically and visually."
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:01+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> intake: draft ready; ask the taxpayer whether to submit it for Kushim review"
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:01+00:00",
       "agent": "intake",
       "outcome": "success",
       "summary": "Recorded answer for submit_draft."
     },
     {
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:01+00:00",
       "agent": "orchestrator",
       "outcome": "route",
       "summary": "-> end: submitted internally for human review"
@@ -1390,7 +1390,7 @@
   "human_events": [],
   "metrics": [
     {
-      "id": "llm-2c238dca96",
+      "id": "llm-156d31251e",
       "kind": "model_call",
       "agent": "document_extraction",
       "purpose": "extract:1099-R",
@@ -1398,7 +1398,7 @@
       "model": "offline-deterministic",
       "ok": true,
       "error": "",
-      "latency_ms": 3921.7,
+      "latency_ms": 4123.0,
       "input_tokens": null,
       "output_tokens": null,
       "cache_creation_input_tokens": null,
@@ -1406,7 +1406,7 @@
       "doc_id": "doc-22de8c2887b8"
     },
     {
-      "id": "llm-82f6dda895",
+      "id": "llm-6f79c3e5b9",
       "kind": "model_call",
       "agent": "document_extraction",
       "purpose": "extract:SSA-1099",
@@ -1414,7 +1414,7 @@
       "model": "offline-deterministic",
       "ok": true,
       "error": "",
-      "latency_ms": 2909.6,
+      "latency_ms": 3171.4,
       "input_tokens": null,
       "output_tokens": null,
       "cache_creation_input_tokens": null,
@@ -1422,267 +1422,267 @@
       "doc_id": "doc-50e888caf8ee"
     },
     {
-      "id": "mcp-21cb609ea686",
+      "id": "mcp-d0ea6028587b",
       "kind": "tool_call",
       "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 4.6,
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 5.1,
       "transport": "mcp-stdio"
     },
     {
-      "id": "mcp-015cb2aeb36a",
+      "id": "mcp-f349633f4cfe",
       "kind": "tool_call",
       "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 3.0,
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 4.0,
       "transport": "mcp-stdio"
     },
     {
-      "id": "mcp-e218a324586b",
+      "id": "mcp-f441df1795b5",
       "kind": "tool_call",
       "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.7,
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 4.3,
       "transport": "mcp-stdio"
     },
     {
-      "id": "mcp-c426fb31dfbf",
+      "id": "mcp-6354de0900ff",
       "kind": "tool_call",
       "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.0,
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 5.9,
       "transport": "mcp-stdio"
     },
     {
-      "id": "mcp-95b9d5c4f3b3",
+      "id": "mcp-0e9c8c18c444",
       "kind": "tool_call",
       "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 3.0,
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 5.4,
       "transport": "mcp-stdio"
     },
     {
-      "id": "mcp-ac413d184b48",
+      "id": "mcp-27ce9169f479",
       "kind": "tool_call",
       "tool": "ira_distributions",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.2,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-9e4bcc3a3b91",
-      "kind": "tool_call",
-      "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 3.9,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-e168d75dee88",
-      "kind": "tool_call",
-      "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.8,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-627d4c412df5",
-      "kind": "tool_call",
-      "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "elapsed_ms": 3.5,
       "transport": "mcp-stdio"
     },
     {
-      "id": "mcp-097165c3f8e1",
+      "id": "mcp-457f88863696",
       "kind": "tool_call",
       "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 3.0,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-97d81360a66c",
-      "kind": "tool_call",
-      "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.9,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-6c0361682434",
-      "kind": "tool_call",
-      "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 3.1,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-b06e9a1fe592",
-      "kind": "tool_call",
-      "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.7,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-abdd5b60ed94",
-      "kind": "tool_call",
-      "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.4,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-2918f0179af1",
-      "kind": "tool_call",
-      "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "elapsed_ms": 2.8,
       "transport": "mcp-stdio"
     },
     {
-      "id": "mcp-87e8f07c9e3f",
+      "id": "mcp-9fbeb7590580",
       "kind": "tool_call",
-      "tool": "taxable_social_security",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 3.1,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-984d96412d04",
-      "kind": "tool_call",
-      "tool": "total_income",
-      "at": "2026-10-24T05:57:35+00:00",
+      "tool": "aggregate_amounts",
+      "at": "2026-10-24T06:28:00+00:00",
       "elapsed_ms": 2.7,
       "transport": "mcp-stdio"
     },
     {
-      "id": "mcp-33dc8d9c622b",
+      "id": "mcp-c6c59368ed99",
       "kind": "tool_call",
-      "tool": "adjusted_gross_income",
-      "at": "2026-10-24T05:57:35+00:00",
+      "tool": "aggregate_amounts",
+      "at": "2026-10-24T06:28:00+00:00",
       "elapsed_ms": 2.5,
       "transport": "mcp-stdio"
     },
     {
-      "id": "mcp-fb5e1e344c7c",
-      "kind": "tool_call",
-      "tool": "standard_deduction",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.7,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-05a4601f36fa",
-      "kind": "tool_call",
-      "tool": "enhanced_senior_deduction",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.6,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-024350bd5922",
+      "id": "mcp-a2ea7d0b06e3",
       "kind": "tool_call",
       "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "elapsed_ms": 2.5,
       "transport": "mcp-stdio"
     },
     {
-      "id": "mcp-3e3ffe03c9d3",
-      "kind": "tool_call",
-      "tool": "deductions_and_taxable_income",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.7,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-6dac0da1f04b",
-      "kind": "tool_call",
-      "tool": "income_tax",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.7,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-6c60158f9b11",
+      "id": "mcp-95644d090c6f",
       "kind": "tool_call",
       "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.2,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-1291227a2afe",
-      "kind": "tool_call",
-      "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 3.1,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-28c9bd29ea8b",
-      "kind": "tool_call",
-      "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.8,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-f1498844ba9c",
-      "kind": "tool_call",
-      "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 3.5,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-65133ed2201d",
-      "kind": "tool_call",
-      "tool": "total_tax",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 3.1,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-51d7e3a17028",
-      "kind": "tool_call",
-      "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.7,
-      "transport": "mcp-stdio"
-    },
-    {
-      "id": "mcp-62993e3b8a04",
-      "kind": "tool_call",
-      "tool": "aggregate_amounts",
-      "at": "2026-10-24T05:57:35+00:00",
+      "at": "2026-10-24T06:28:00+00:00",
       "elapsed_ms": 2.3,
       "transport": "mcp-stdio"
     },
     {
-      "id": "mcp-b13856331bff",
+      "id": "mcp-80baedcc80c4",
       "kind": "tool_call",
-      "tool": "total_payments",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 2.6,
+      "tool": "aggregate_amounts",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.4,
       "transport": "mcp-stdio"
     },
     {
-      "id": "mcp-1216bb1f61f6",
+      "id": "mcp-809282e4dd25",
       "kind": "tool_call",
-      "tool": "refund_or_amount_owed",
-      "at": "2026-10-24T05:57:35+00:00",
+      "tool": "aggregate_amounts",
+      "at": "2026-10-24T06:28:00+00:00",
       "elapsed_ms": 2.5,
       "transport": "mcp-stdio"
     },
     {
-      "id": "mcp-63e97e912bd8",
+      "id": "mcp-7492bd6a0e4d",
+      "kind": "tool_call",
+      "tool": "aggregate_amounts",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.6,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-7431d919a29b",
+      "kind": "tool_call",
+      "tool": "aggregate_amounts",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.6,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-694dc88daa52",
+      "kind": "tool_call",
+      "tool": "taxable_social_security",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 3.1,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-451a31f11ffb",
+      "kind": "tool_call",
+      "tool": "total_income",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.6,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-34e85b3c1751",
+      "kind": "tool_call",
+      "tool": "adjusted_gross_income",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.7,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-7fe6b5f0a26b",
+      "kind": "tool_call",
+      "tool": "standard_deduction",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.9,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-5bc8ae50dbbe",
+      "kind": "tool_call",
+      "tool": "enhanced_senior_deduction",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.7,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-db8a98175cfc",
+      "kind": "tool_call",
+      "tool": "aggregate_amounts",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 3.4,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-7121943abc1a",
+      "kind": "tool_call",
+      "tool": "deductions_and_taxable_income",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.9,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-ceb09bddc6ad",
+      "kind": "tool_call",
+      "tool": "income_tax",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.6,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-63c21b4861e5",
+      "kind": "tool_call",
+      "tool": "aggregate_amounts",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.7,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-a9836c036fb2",
+      "kind": "tool_call",
+      "tool": "aggregate_amounts",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.4,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-6fec12cb5d9c",
+      "kind": "tool_call",
+      "tool": "aggregate_amounts",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.7,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-5c442b206829",
+      "kind": "tool_call",
+      "tool": "aggregate_amounts",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.7,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-15176a068a06",
+      "kind": "tool_call",
+      "tool": "total_tax",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.9,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-31eda4b8cda4",
+      "kind": "tool_call",
+      "tool": "aggregate_amounts",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.8,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-17d93b4ae43f",
+      "kind": "tool_call",
+      "tool": "aggregate_amounts",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 3.0,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-ea95291c3c2f",
+      "kind": "tool_call",
+      "tool": "total_payments",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.9,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-2d556db50a2d",
+      "kind": "tool_call",
+      "tool": "refund_or_amount_owed",
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 2.9,
+      "transport": "mcp-stdio"
+    },
+    {
+      "id": "mcp-165269294ba9",
       "kind": "tool_call",
       "tool": "verify_return",
-      "at": "2026-10-24T05:57:35+00:00",
-      "elapsed_ms": 3.5,
+      "at": "2026-10-24T06:28:00+00:00",
+      "elapsed_ms": 6.3,
       "transport": "mcp-stdio"
     }
   ],

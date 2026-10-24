@@ -120,7 +120,7 @@ def render() -> None:
     top = st.columns([3, 1], vertical_alignment="center")
     top[0].markdown(f"### Your return &nbsp; {badge(view['status'])}", unsafe_allow_html=True)
     top[0].caption(f"Case number **{case_id}** - write this down to come back later. Your answers are saved as you go.")
-    if top[1].button("Leave and come back later", use_container_width=True):
+    if top[1].button("Save and leave", use_container_width=True):
         st.session_state.pop("sf_case", None)
         st.rerun()
     flash = st.session_state.pop("sf_flash", None)
