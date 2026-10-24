@@ -1,0 +1,131 @@
+{
+  "results": [
+    {
+      "case": "eval_case_1",
+      "kind": "required_demo",
+      "ok": true,
+      "detail": "status=submitted_for_internal_review",
+      "case_id": "SF-20261024-61C8C9"
+    },
+    {
+      "case": "eval_case_2",
+      "kind": "required_demo",
+      "ok": true,
+      "detail": "status=submitted_for_internal_review",
+      "case_id": "SF-20261024-15A87E"
+    },
+    {
+      "case": "grader_style_unseen",
+      "kind": "unseen_input",
+      "ok": true,
+      "detail": "status=submitted_for_internal_review",
+      "case_id": "SF-20261024-B276F4"
+    },
+    {
+      "case": "case_single_retiree_mixed",
+      "kind": "coverage",
+      "ok": true,
+      "detail": "status=submitted_for_internal_review",
+      "case_id": "SF-20261024-5A4407"
+    },
+    {
+      "case": "case_mfj_high_income",
+      "kind": "coverage",
+      "ok": true,
+      "detail": "status=submitted_for_internal_review",
+      "case_id": "SF-20261024-A53661"
+    },
+    {
+      "case": "case_hoh_dependent",
+      "kind": "coverage",
+      "ok": true,
+      "detail": "status=submitted_for_internal_review",
+      "case_id": "SF-20261024-C75966"
+    },
+    {
+      "case": "case_mfs_lived_apart",
+      "kind": "coverage",
+      "ok": true,
+      "detail": "status=submitted_for_internal_review",
+      "case_id": "SF-20261024-75ED66"
+    },
+    {
+      "case": "case_qss",
+      "kind": "coverage",
+      "ok": true,
+      "detail": "status=submitted_for_internal_review",
+      "case_id": "SF-20261024-4E3E56"
+    },
+    {
+      "case": "stop_1099r_2b",
+      "kind": "mandatory_stop",
+      "ok": true,
+      "detail": "escalated=form_1099r_2b",
+      "case_id": "SF-20261024-E1A297"
+    },
+    {
+      "case": "stop_advice",
+      "kind": "mandatory_stop",
+      "ok": true,
+      "detail": "escalated=advice_request",
+      "case_id": "SF-20261024-0EB059"
+    },
+    {
+      "case": "stop_spouse_died",
+      "kind": "mandatory_stop",
+      "ok": true,
+      "detail": "escalated=filing_status_ambiguity",
+      "case_id": "SF-20261024-1914DC"
+    },
+    {
+      "case": "stop_exploitation",
+      "kind": "mandatory_stop",
+      "ok": true,
+      "detail": "escalated=exploitation_concern",
+      "case_id": "SF-20261024-72015D"
+    },
+    {
+      "case": "stop_third_party",
+      "kind": "mandatory_stop",
+      "ok": true,
+      "detail": "escalated=exploitation_concern",
+      "case_id": "SF-20261024-F8F50E"
+    },
+    {
+      "case": "stop_crypto",
+      "kind": "mandatory_stop",
+      "ok": true,
+      "detail": "escalated=out_of_scope",
+      "case_id": "SF-20261024-B51CC4"
+    },
+    {
+      "case": "stop_itemize",
+      "kind": "mandatory_stop",
+      "ok": true,
+      "detail": "escalated=out_of_scope",
+      "case_id": "SF-20261024-34ED57"
+    },
+    {
+      "case": "stop_too_young",
+      "kind": "mandatory_stop",
+      "ok": true,
+      "detail": "escalated=out_of_scope",
+      "case_id": "SF-20261024-483A98"
+    },
+    {
+      "case": "stop_capital_gain_dist",
+      "kind": "mandatory_stop",
+      "ok": true,
+      "detail": "escalated=out_of_scope",
+      "case_id": "SF-20261024-0AB7BB"
+    },
+    {
+      "case": "stop_real_ssn_w2",
+      "kind": "security",
+      "ok": true,
+      "detail": "escalated=document_problem",
+      "case_id": "SF-20261024-61D50D"
+    }
+  ],
+  "failures": 0
+}

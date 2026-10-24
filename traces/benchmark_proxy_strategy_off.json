@@ -1,0 +1,167 @@
+{
+  "run_id": "bench-off-47286f",
+  "case": "bench_ten_docs",
+  "strategy_enabled": false,
+  "proxy": true,
+  "model": null,
+  "run_at": "2026-10-24T05:55:23+00:00",
+  "rows": [
+    {
+      "doc": 1,
+      "doc_type": "W-2",
+      "file": "b01_w2_library.png",
+      "messages_sent": 1,
+      "latency_s": 3.29,
+      "model": "proxy (no model call)",
+      "proxy_text_chars": 844,
+      "proxy_images": 1,
+      "extracted": {
+        "1": "18200.00",
+        "2": "1100.00",
+        "3": "18200.00",
+        "5": "18200.00"
+      },
+      "issues": []
+    },
+    {
+      "doc": 2,
+      "doc_type": "1099-INT",
+      "file": "b02_int_bank_a.png",
+      "messages_sent": 3,
+      "latency_s": 3.08,
+      "model": "proxy (no model call)",
+      "proxy_text_chars": 1411,
+      "proxy_images": 2,
+      "extracted": {
+        "1": "410.25"
+      },
+      "issues": []
+    },
+    {
+      "doc": 3,
+      "doc_type": "1099-DIV",
+      "file": "b03_div_fund_a.png",
+      "messages_sent": 5,
+      "latency_s": 3.02,
+      "model": "proxy (no model call)",
+      "proxy_text_chars": 1879,
+      "proxy_images": 3,
+      "extracted": {
+        "1a": "1325.00",
+        "1b": "1100.00"
+      },
+      "issues": []
+    },
+    {
+      "doc": 4,
+      "doc_type": "1099-R",
+      "file": "b04_r_ira.png",
+      "messages_sent": 7,
+      "latency_s": 2.85,
+      "model": "proxy (no model call)",
+      "proxy_text_chars": 2395,
+      "proxy_images": 4,
+      "extracted": {
+        "1": "6000.00",
+        "2a": "6000.00",
+        "4": "600.00"
+      },
+      "issues": []
+    },
+    {
+      "doc": 5,
+      "doc_type": "W-2",
+      "file": "b05_w2_market.png",
+      "messages_sent": 9,
+      "latency_s": 2.37,
+      "model": "proxy (no model call)",
+      "proxy_text_chars": 2844,
+      "proxy_images": 5,
+      "extracted": {
+        "1": "12650.00",
+        "2": "700.00",
+        "3": "12650.00",
+        "5": "12650.00"
+      },
+      "issues": []
+    },
+    {
+      "doc": 6,
+      "doc_type": "1099-INT",
+      "file": "b06_int_bank_b.png",
+      "messages_sent": 11,
+      "latency_s": 2.23,
+      "model": "proxy (no model call)",
+      "proxy_text_chars": 3408,
+      "proxy_images": 6,
+      "extracted": {
+        "1": "88.40",
+        "8": "120.00"
+      },
+      "issues": []
+    },
+    {
+      "doc": 7,
+      "doc_type": "SSA-1099",
+      "file": "b07_ssa.png",
+      "messages_sent": 13,
+      "latency_s": 1.53,
+      "model": "proxy (no model call)",
+      "proxy_text_chars": 3877,
+      "proxy_images": 7,
+      "extracted": {
+        "3": "19800.00",
+        "4": "0.00",
+        "5": "19800.00",
+        "6": "900.00"
+      },
+      "issues": []
+    },
+    {
+      "doc": 8,
+      "doc_type": "1099-DIV",
+      "file": "b08_div_fund_b.png",
+      "messages_sent": 15,
+      "latency_s": 2.42,
+      "model": "proxy (no model call)",
+      "proxy_text_chars": 4370,
+      "proxy_images": 8,
+      "extracted": {
+        "1a": "640.00",
+        "1b": "500.00",
+        "4": "0.00"
+      },
+      "issues": []
+    },
+    {
+      "doc": 9,
+      "doc_type": "1099-INT",
+      "file": "b09_int_treasury.png",
+      "messages_sent": 17,
+      "latency_s": 2.4,
+      "model": "proxy (no model call)",
+      "proxy_text_chars": 4893,
+      "proxy_images": 9,
+      "extracted": {
+        "3": "275.00"
+      },
+      "issues": []
+    },
+    {
+      "doc": 10,
+      "doc_type": "1099-R",
+      "file": "b10_r_pension.png",
+      "messages_sent": 19,
+      "latency_s": 2.98,
+      "model": "proxy (no model call)",
+      "proxy_text_chars": 5369,
+      "proxy_images": 10,
+      "extracted": {
+        "1": "9600.00",
+        "2a": "9600.00",
+        "4": "960.00"
+      },
+      "issues": []
+    }
+  ]
+}

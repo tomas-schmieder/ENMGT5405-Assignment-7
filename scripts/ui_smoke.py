@@ -4,8 +4,8 @@ Plays the taxpayer through the chat and option buttons, uploads the fixture
 images with the file picker, and (with a third argument) plays the reviewer in
 the dashboard. Saves screenshots to OUT_DIR.
 
-Usage (app must be running on http://localhost:8599, e.g. via
-``python run.py ui --port 8599``):
+Usage (app must be running; default URL http://localhost:8501, override with
+SILVERFILE_URL):
 
     python scripts/ui_smoke.py OUT_DIR eval_case_1
     python scripts/ui_smoke.py OUT_DIR eval_case_2 review
@@ -53,7 +53,7 @@ with sync_playwright() as p:
     exe = os.environ.get("CHROMIUM_PATH")
     b = p.chromium.launch(executable_path=exe) if exe else p.chromium.launch()
     page = b.new_page(viewport={"width": 1300, "height": 1000})
-    page.goto("http://localhost:8599", wait_until="networkidle")
+    page.goto(os.environ.get("SILVERFILE_URL", "http://localhost:8501"), wait_until="networkidle")
     page.wait_for_timeout(5000)
     page.get_by_role("button", name="Start").click()
     page.wait_for_timeout(4000)

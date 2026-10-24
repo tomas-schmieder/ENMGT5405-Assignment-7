@@ -213,10 +213,6 @@ def test_duplicate_upload_and_duplicate_content(service_factory, tmp_path):
 def test_correction_after_draft_invalidates_and_recomputes(service_factory):
     svc = service_factory()
     spec = load_case("eval_case_1")
-    spec_answers = dict(spec)
-    view = run_case(svc, {**spec_answers, "answers": {**spec["answers"]}}, max_turns=200, stop_on_review=True)
-    case_id = view["case_id"]
-    # run_case submitted the draft; start a fresh case and stop before submitting instead
     case_id = svc.create_case()
     for _ in range(80):
         pend = svc.pending(case_id)

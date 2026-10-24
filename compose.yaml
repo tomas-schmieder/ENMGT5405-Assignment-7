@@ -1,0 +1,19 @@
+# Start:  docker compose up --build      then open http://localhost:8501
+# Case data, uploads and drafts persist in the named volume "silverfile-data".
+services:
+  silverfile:
+    build: .
+    image: silverfile:latest
+    ports:
+      - "8501:8501"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      SILVERFILE_VAR_DIR: /data
+    volumes:
+      - silverfile-data:/data
+    restart: unless-stopped
+
+volumes:
+  silverfile-data:
